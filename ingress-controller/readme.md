@@ -91,3 +91,58 @@ We will deploy a `Service` and a `VirtualServer` resource to provide access to t
 2. Test the dashboard
    
 http://dashboard.example.com:9000/dashboard.html 
+
+---
+
+#### Deploy the Cafe Demo app
+
+The Cafe application that you will deploy has Coffee and Tea pods and services, with NGINX Ingress routing the traffic for `/coffee` and `/tea` routes, using the `cafe.example.com` Hostname, and with TLS enabled. 
+
+1. Deploy the Cafe application by applying the three manifests:
+
+    ```bash
+    kubectl apply -f /home/ubuntu/hol/cafe-secret.yaml
+    kubectl apply -f /home/ubuntu/hol/cafe.yaml
+    kubectl apply -f /home/ubuntu/hol/cafe-virtualserver.yaml
+    ```
+    ```bash
+    ###Sample output###
+    secret/cafe-secret created
+    deployment.apps/coffee created
+    service/coffee-svc created
+    deployment.apps/tea created
+    service/tea-svc created
+    virtualserver.k8s.nginx.org/cafe-vs created
+    ```
+
+2. Check that all pods are running, you should see **three** Coffee and **three** Tea pods:
+
+    ```bash
+    kubectl get pods
+    ```
+    ```bash
+    ###Sample output###
+    NAME                      READY   STATUS    RESTARTS   AGE
+    coffee-56b7b9b46f-9ks7w   1/1     Running   0             28s
+    coffee-56b7b9b46f-mp9gs   1/1     Running   0             28s
+    coffee-56b7b9b46f-v7xxp   1/1     Running   0             28s
+    tea-568647dfc7-54r7k      1/1     Running   0             27s
+    tea-568647dfc7-9h75w      1/1     Running   0             27s
+    tea-568647dfc7-zqtzq      1/1     Running   0          27s
+    ```
+
+3. Check that the Cafe `VirtualServer` , **`cafe-vs`**, is running:
+
+    ```bash
+    kubectl get virtualserver cafe-vs
+    ```
+    ```bash
+    ###Sample output###
+    NAME      STATE   HOST               IP    PORTS   AGE
+    cafe-vs   Valid   cafe.example.com                 4m6s
+    ```
+
+    **Note:** The `STATE` should be `Valid`.  If it is not, then there is an issue with your yaml manifest file `(cafe-vs.yaml)`.  You could also use `kubectl describe vs cafe-vs` to get more information about the `VirtualServer` we just created.
+
+4. Compare VirtualServer and Ingress manifest
+
