@@ -42,9 +42,11 @@ sudo su -
 cd /etc/nginx/conf.d
 ```
 
-1. Serve web content
+*Note: for testing, you can use curl from vscode command line or firefox from the NGINX Access Method panel.*
+
+**1. Serve web content**
    
-From this git project, copy the content of `basic-lb/config/web.conf` and paste it to `/etc/nginx/conf.d/web.conf` then check the result with curl
+From this git project, copy the content of `basic-lb/config/web.conf` and paste it to `/etc/nginx/conf.d/web.conf` then check the result
 
 ```bash
 vi web.conf
@@ -52,23 +54,37 @@ curl http://10.1.1.4:9001
 curl http://10.1.1.4:9002
 curl http://10.1.1.4:9003
 ```
+In Firefox
+```bash
+http://10.1.1.4:9001
+http://10.1.1.4:9002
+http://10.1.1.4:9003
+```
 
-2. Configure load balancer
+**2. Configure load balancer**
    
-From this git project, copy the content of `basic-lb/config/lb.conf` and paste it to `/etc/nginx/conf.d/lb.conf` then check the result with curl
+From this git project, copy the content of `basic-lb/config/lb.conf` and paste it to `/etc/nginx/conf.d/lb.conf` then check the result
 
 ```bash
 vi lb.conf
 curl http://10.1.1.4:9000
 ```
+In Firefox
+```bash
+http://10.1.1.4:9000
+```
 
-3. Configure healthcheck dashboard
+**3. Configure healthcheck dashboard**
    
-From this git project, copy the content of `basic-lb/config/dashboard.conf` and paste it to `/etc/nginx/conf.d/dashboard.conf` then check the result with curl
+From this git project, copy the content of `basic-lb/config/dashboard.conf` and paste it to `/etc/nginx/conf.d/dashboard.conf` then check the result 
 
 ```bash 
 vi dashboard.conf
 curl http://10.1.1.4:8081/dashboard.html
+```
+In Firefox
+```bash
+http://10.1.1.4:8081/dashboard.html
 ```
 
 
