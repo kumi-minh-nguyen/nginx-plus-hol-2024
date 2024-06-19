@@ -12,6 +12,8 @@ minikube tunnel
 
 Press "Ctrl a" then "d" to detach
 
+---
+
 #### Introduction
 
 The NGINX Ingress Controller is already running in this workshop. You will be checking and verifying the Ingress Controller is running.
@@ -46,6 +48,8 @@ The NGINX Ingress Controller is already running in this workshop. You will be ch
    ```
    **Note:** If this command doesn't show the name of the pod then run the previous command again.
 
+---
+
 #### Inspect the details of your Ingress Controller:
 
 1. Inspect the details of the NGINX Ingress Controller pod using the `kubectl describe` command
@@ -65,4 +69,25 @@ The NGINX Ingress Controller is already running in this workshop. You will be ch
    * Use XRDP access method from Minikube machine
    * Log in with credentials ubuntu/HelloUDF
    * Open Firefox: `http://dashboard.example.com:9000/dashboard.html`
-     
+
+---
+
+#### Deploy the NGINX Dashboard Service
+
+We will deploy a `Service` and a `VirtualServer` resource to provide access to the NGINX Plus Dashboard for live monitoring.  NGINX Ingress [`VirtualServer`](https://docs.nginx.com/nginx-ingress-controller/configuration/virtualserver-and-virtualserverroute-resources/) is a [Custom Resource Definition (CRD)](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/) used by NGINX to configure NGINX Server and Location blocks for NGINX configurations.
+
+
+1. In the `hol` folder, apply the `dashboard-vs.yaml` file to deploy a `Service` and a `VirtualServer` resource to provide access to the NGINX Plus Dashboard for live monitoring:
+
+    ```bash
+    kubectl apply -f /home/ubuntu/hol/dashboard-vs.yaml
+    ```
+    ```bash
+    ###Sample output###
+    service/dashboard-svc created
+    virtualserver.k8s.nginx.org/dashboard-vs created
+    ```
+
+2. Test the dashboard
+   
+http://dashboard.example.com:9000/dashboard.html 
