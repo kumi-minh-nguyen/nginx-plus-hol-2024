@@ -87,8 +87,18 @@ In Firefox
 ```bash
 http://10.1.1.4:8081/dashboard.html
 ```
-![healthcheck overview](media/healcheck_overview.png)
+![healthcheck overview](media/healthcheck_overview.png)
 
-![healthcheck upstreams](media/healcheck_upstreams.png)
+On the top right, click on `HTTP Upstreams`
 
+![healthcheck upstreams](media/healthcheck_upstreams.png)
 
+---
+
+Good job! Let's summarize what you have achieved so far:
+- Understand NGINX config file structure
+- Configure NGINX to server web content
+- Configure NGINX to load balance web pages
+- Configure NGINX healthcheck dashboard
+
+Next, we will move on to more advanced configurations, making NGINX a flexible and secured API Gateway!
