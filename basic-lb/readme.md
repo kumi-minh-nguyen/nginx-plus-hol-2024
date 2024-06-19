@@ -73,6 +73,7 @@ In Firefox
 ```bash
 http://10.1.1.4:9000
 ```
+Refresh a few times to see load balance effect.
 
 **3. Configure healthcheck dashboard**
    
@@ -86,6 +87,8 @@ In Firefox
 ```bash
 http://10.1.1.4:8081/dashboard.html
 ```
+![healthcheck overview](media/healcheck_overview.png)
 
+![healthcheck upstreams](media/healcheck_upstreams.png)
 
 
