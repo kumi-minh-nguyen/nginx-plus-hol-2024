@@ -50,6 +50,10 @@ The NGINX Ingress Controller is already running in this workshop. You will be ch
    * Port `80 and 443` for web/ssl traffic,
    * Port `8081` for Readiness Probe, 
    * Port `9000` for the Dashboard, and 
-   * Port `9113` for Prometheus (You will see this in a later Lab)
 
 2. Check the NIC Plus Dashboard
+   
+   * Use XRDP access method from Minikube machine
+   * Log in with credentials ubuntu/HelloUDF
+   * Open Firefox: `http://dashboard.example.com:9000/dashboard.html`
+     
