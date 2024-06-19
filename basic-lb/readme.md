@@ -53,7 +53,7 @@ From this git project, copy the content of `basic-lb/config/web.conf` and paste 
 
 ```vi web.conf```
 
-With curl
+Test with curl
 
 ```bash
 curl http://10.1.1.4:9001
@@ -61,7 +61,7 @@ curl http://10.1.1.4:9002
 curl http://10.1.1.4:9003
 ```
 
-In Firefox
+Test with Firefox
 
 ```bash
 http://10.1.1.4:9001
@@ -75,11 +75,11 @@ From this git project, copy the content of `basic-lb/config/lb.conf` and paste i
 
 ```vi lb.conf```
 
-With curl
+Test with curl
 
 ```curl http://10.1.1.4:9000```
 
-In Firefox
+Test with Firefox
 
 ```http://10.1.1.4:9000```
 
@@ -91,11 +91,11 @@ From this git project, copy the content of `basic-lb/config/dashboard.conf` and 
 
 ```vi dashboard.conf```
 
-With curl
+Test with curl
 
 ```curl http://10.1.1.4:8081/dashboard.html```
 
-In Firefox
+Test with Firefox
 
 ```http://10.1.1.4:8081/dashboard.html```
 
