@@ -18,7 +18,13 @@ This folder keeps NGINX default files for healthcheck dashboard and error pages
 
 ---
 #### Next, we'll check out three web pages and configure NGINX to load balance them
-```bash
-cd /opt/hol/
-cat App1/index.html
-```
+```cd /opt/hol/```
+
+![three apps](media/three_apps.png)
+
+```cat App1/index.html```
+
+![app content](media/app_content.png)
+
+Do the same for App2 and App3
+---
