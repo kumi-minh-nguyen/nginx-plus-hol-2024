@@ -1,4 +1,4 @@
-Stay in the same NGINX machine.
+**Stay in the same NGINX machine.**
 
 From this git project, copy the content of `api-gateway/config/api_gateway.conf` to `/etc/nginx/conf.d/api_gateway.conf`
 
@@ -60,7 +60,7 @@ To test
 
 ```curl -k https://localhost:8443/api/f1/drivers?year=2019 | jq && echo```
 
-**3. Get Header Response in Result** 
+**3. Request/Response Header Manipulation** 
 
 ```bash
 ...
@@ -123,6 +123,13 @@ To test
 ```curl -k -H "x-api-key:P5FcvLwkyN7eethF" https://localhost:8443/post | jq && echo```
 
 **5. Key-Value Store**
+
+Check out NGINX key-value file
+
+```cat /etc/nginx/apikey.keyval```
+
+Then see how it is referred to from config file 
+
 ```bash
 ...
 #Demo Key-Value Store - NGINX Plus feature
