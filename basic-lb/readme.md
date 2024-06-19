@@ -105,6 +105,26 @@ On the top right, click on `HTTP Upstreams`
 
 ![healthcheck upstreams](media/healthcheck_upstreams.png)
 
+**4. Enable App Protect**
+
+Open `/etc/nginx/conf.d/lb.conf` and uncomment the App Protect portion
+
+```bash
+...
+app_protect_enable on;
+app_protect_policy_file /etc/app_protect/conf/NginxDefaultPolicy.json;
+app_protect_security_log_enable on;
+app_protect_security_log /opt/app_protect/share/defaults/log_illegal.json /var/log/app_protect/security.log;
+...
+```
+
+Test with curl
+
+```bash
+curl localhost:9000
+curl 'localhost:9000/?<script>'
+```
+
 ---
 
 **Good job! Let's summarize what you have achieved so far:**
@@ -112,5 +132,6 @@ On the top right, click on `HTTP Upstreams`
 - Configure NGINX to server web content
 - Configure NGINX to load balance web pages
 - Configure NGINX healthcheck dashboard
+- Enable App Protect
 
 Next, we will move on to more advanced configurations, making NGINX a flexible and secured API Gateway!
