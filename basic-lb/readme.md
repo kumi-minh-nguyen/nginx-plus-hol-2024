@@ -1,13 +1,15 @@
-#### Go to NGINX VM using vscode option
+This module will is about basic NGINX configuration for load balancing and healtheck.
+
+**Go to NGINX VM using vscode option**
 
 ![vscode access](media/vscode_access.png)
 
 ---
-#### NGINX Plus with App Protect has been installed in this lab. By default, NGINX configurations are located here:
+**NGINX Plus with App Protect has been installed in this lab. By default, NGINX configurations are located here:**
 - /etc/nginx/nginx.conf
 - /etc/nginx/conf.d/default.conf
 
-#### Let's examine the the content of each file respectively
+Let's examine the the content of each file respectively
 
 ![nginx conf](media/nginx_conf.png)
 
@@ -18,7 +20,8 @@ This folder keeps NGINX default files for healthcheck dashboard and error pages
 ![usr share nginx html](media/usr_share_nginx_html.png)
 
 ---
-#### The lab contains three html web pages. Let's check them out.
+**The lab contains three html web pages. Let's check them out.**
+
 ```cd /opt/hol/```
 
 ![three apps](media/three_apps.png)
@@ -33,7 +36,7 @@ cat App2/index.html
 cat App3/index.html
 ```
 ---
-#### Next we will showcase the power and simplicity of NGINX 
+**Next we will showcase the power and simplicity of NGINX** 
 
 Change to root user and go to /etc/nginx/conf.d folder
 
@@ -48,13 +51,18 @@ cd /etc/nginx/conf.d
    
 From this git project, copy the content of `basic-lb/config/web.conf` and paste it to `/etc/nginx/conf.d/web.conf` then check the result
 
+```vi web.conf```
+
+With curl
+
 ```bash
-vi web.conf
 curl http://10.1.1.4:9001
 curl http://10.1.1.4:9002
 curl http://10.1.1.4:9003
 ```
+
 In Firefox
+
 ```bash
 http://10.1.1.4:9001
 http://10.1.1.4:9002
@@ -65,28 +73,32 @@ http://10.1.1.4:9003
    
 From this git project, copy the content of `basic-lb/config/lb.conf` and paste it to `/etc/nginx/conf.d/lb.conf` then check the result
 
-```bash
-vi lb.conf
-curl http://10.1.1.4:9000
-```
+```vi lb.conf```
+
+With curl
+
+```curl http://10.1.1.4:9000```
+
 In Firefox
-```bash
-http://10.1.1.4:9000
-```
+
+```http://10.1.1.4:9000```
+
 Refresh a few times to see load balance effect.
 
 **3. Configure healthcheck dashboard**
    
 From this git project, copy the content of `basic-lb/config/dashboard.conf` and paste it to `/etc/nginx/conf.d/dashboard.conf` then check the result 
 
-```bash 
-vi dashboard.conf
-curl http://10.1.1.4:8081/dashboard.html
-```
+```vi dashboard.conf```
+
+With curl
+
+```curl http://10.1.1.4:8081/dashboard.html```
+
 In Firefox
-```bash
-http://10.1.1.4:8081/dashboard.html
-```
+
+```http://10.1.1.4:8081/dashboard.html```
+
 ![healthcheck overview](media/healthcheck_overview.png)
 
 On the top right, click on `HTTP Upstreams`
@@ -95,7 +107,7 @@ On the top right, click on `HTTP Upstreams`
 
 ---
 
-Good job! Let's summarize what you have achieved so far:
+**Good job! Let's summarize what you have achieved so far:**
 - Understand NGINX config file structure
 - Configure NGINX to server web content
 - Configure NGINX to load balance web pages
