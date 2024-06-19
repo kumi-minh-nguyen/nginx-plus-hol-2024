@@ -1,13 +1,22 @@
-## Introduction
+#### Start the environment
+Use vscode access method on Minikube machine
+
+```minikube start```
+
+Open minikube tunnel in background to expose load balancers 
+
+```bash
+screen -S minikube-tunnel
+minikube tunnel
+```
+
+Press "Ctrl a" then "d" to detach
+
+#### Introduction
 
 The NGINX Ingress Controller is already running in this workshop. You will be checking and verifying the Ingress Controller is running.
 
-## Learning Objectives 
-- Intro to NGINX Ingress Controller
-- Intro to Kubernetes environment, interacting with `kubectl` command
-- Access the NGINX Plus Dashboard
-
-## Check your Ingress Controller
+#### Check your Ingress Controller
 
 1. First, verify the NGINX Ingress controller is up and running correctly in the Kubernetes cluster:
 
@@ -37,7 +46,7 @@ The NGINX Ingress Controller is already running in this workshop. You will be ch
    ```
    **Note:** If this command doesn't show the name of the pod then run the previous command again.
 
-## Inspect the details of your Ingress Controller:
+#### Inspect the details of your Ingress Controller:
 
 1. Inspect the details of the NGINX Ingress Controller pod using the `kubectl describe` command
 
