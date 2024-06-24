@@ -171,7 +171,7 @@ Not just the traffic between customers and the Ingress Controller, but also betw
     
 4. Check the Plus Dashboard, and your new End-to-End TLS Cafe Application - ensure all 6 "mtls" coffee and tea pods are now in Up/Green status.
 
-5. Using Chrome, check the access to coffee and tea as before:
+5. Using Firefox, check the access to coffee and tea as before:
 
     https://cafe.example.com/coffee
     
@@ -220,7 +220,7 @@ Having read the tea leaves you are highly confident in your new code. So you dec
     kubectl apply -f /home/ubuntu/hol/cafe-bluegreen-vs.yaml
     ```
 
-5. Open a Chrome tab for https://cafe.example.com/coffee, and check the Auto Refresh box at the bottom of the page.
+5. Open a Firefox tab for https://cafe.example.com/coffee, and check the Auto Refresh box at the bottom of the page.
 
 
     Check the statistics on the Plus Dashboard Cafe upstreams... Do you see approximately an 80/20 Requests ratio between coffee-mtls and tea-mtls?  You can configure the ratio in 1% increments, from 1-99%.  
