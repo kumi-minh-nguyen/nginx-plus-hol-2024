@@ -45,7 +45,9 @@ sudo su -
 cd /etc/nginx/conf.d
 ```
 
-*Note: for testing, you can use curl from vscode command line or firefox from the NGINX Access Method panel.*
+---
+### ATTENTION: for testing, use curl from VScode or Firefox from NGINX machine Access Method panel.
+---
 
 **1. Serve web content**
    
