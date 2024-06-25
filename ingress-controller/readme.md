@@ -105,7 +105,7 @@ The Cafe application that you will deploy has Coffee and Tea pods and services, 
     ```bash
     kubectl apply -f /home/ubuntu/hol/cafe-secret.yaml
     kubectl apply -f /home/ubuntu/hol/cafe.yaml
-    kubectl apply -f /home/ubuntu/hol/cafe-virtualserver.yaml
+    kubectl apply -f /home/ubuntu/hol/cafe-vs.yaml
     ```
     ```bash
     ###Sample output###
