@@ -50,28 +50,6 @@ The NGINX Ingress Controller is already running in this workshop. You will be ch
 
 ---
 
-#### Inspect the details of your Ingress Controller:
-
-1. Inspect the details of the NGINX Ingress Controller pod using the `kubectl describe` command
-
-   ```bash
-   kubectl describe pod $NIC -n nginx-ingress
-   ```
-
-   **Note:** The IP address and TCP ports that are open on the Ingress. We have the following Ports:
-
-   * Port `80 and 443` for web/ssl traffic,
-   * Port `8081` for Readiness Probe, 
-   * Port `9000` for the Dashboard, and 
-
-2. Check the NIC Plus Dashboard
-   
-   * Use XRDP access method from Minikube machine
-   * Log in with credentials ubuntu/HelloUDF
-   * Open Firefox: `http://dashboard.example.com:9000/dashboard.html`
-
----
-
 #### Deploy the NGINX Dashboard Service
 
 We will deploy a `Service` and a `VirtualServer` resource to provide access to the NGINX Plus Dashboard for live monitoring.  NGINX Ingress [`VirtualServer`](https://docs.nginx.com/nginx-ingress-controller/configuration/virtualserver-and-virtualserverroute-resources/) is a [Custom Resource Definition (CRD)](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/) used by NGINX to configure NGINX Server and Location blocks for NGINX configurations.
@@ -88,11 +66,16 @@ We will deploy a `Service` and a `VirtualServer` resource to provide access to t
     virtualserver.k8s.nginx.org/dashboard-vs created
     ```
 
-2. Test the dashboard
+2. Test the dashboard in vscode terminal
    
 ```bash
 http://dashboard.example.com:9000/dashboard.html
 ```
+
+3. Test the dashboard in Minikube VM browser
+* Use XRDP access method from Minikube machine
+* Log in with credentials ubuntu/HelloUDF
+* Open Firefox: `http://dashboard.example.com:9000/dashboard.html`
 
 ---
 
