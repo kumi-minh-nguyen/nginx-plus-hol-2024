@@ -1,5 +1,5 @@
 #### Start the environment
-Use vscode access method on Minikube machine
+Use vscode access method on Minikube machine. Ensure that you are ubuntu user. If not, ```su - ubuntu``` first before follow doing the below steps.
 
 ```minikube start```
 
